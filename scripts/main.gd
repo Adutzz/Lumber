@@ -59,6 +59,7 @@ func _on_host_button_pressed() -> void:
 	host_lobby()
 
 func _on_join_button_pressed() -> void:
+	main_menu.hide()
 	join_lobby(id_prompt.text.to_int())
 
 func join_lobby(lobby_id: int):
