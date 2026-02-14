@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0w38f8u0ap2l"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_y44tv"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_y44tv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y44tv"]
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = SubResource("PlaceholderTexture2D_y44tv")
+uv1_triplanar = true
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_bc5iu"]
+
+[node name="Environment" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(9.673657, 0, 0, 0, 1, 0, 0, 0, 10.151016, 0, 0, 0)
+mesh = SubResource("PlaneMesh_y44tv")
+surface_material_override/0 = SubResource("StandardMaterial3D_y44tv")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_bc5iu")
