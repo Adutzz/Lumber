@@ -9,9 +9,16 @@ func _enter_tree() -> void:
 	set_multiplayer_authority(name.to_int())
 
 func _ready() -> void:
+	if !is_multiplayer_authority():
+		return
+	
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	camera.current = true
 
 func _unhandled_input(event: InputEvent) -> void:
+	if !is_multiplayer_authority():
+		return
+	
 	if event is InputEventMouseMotion:
 		rotate_y(-event.relative.x * .005)
 		camera.rotate_x(-event.relative.y * .005)
