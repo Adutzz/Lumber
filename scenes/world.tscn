@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://wbnk02cam285"]
+[gd_scene format=3 uid="uid://wbnk02cam285"]
 
 [ext_resource type="Script" uid="uid://c6ak2v2kdloi1" path="res://scripts/main.gd" id="1_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://ds2o47jeg1liv" path="res://scenes/player.tscn" id="2_k0juu"]
@@ -17,27 +17,27 @@ sky = SubResource("Sky_sugp2")
 tonemap_mode = 2
 glow_enabled = true
 
-[node name="World" type="Node"]
+[node name="World" type="Node" unique_id=62542270]
 script = ExtResource("1_4wyf3")
 player_scene = ExtResource("2_k0juu")
 
-[node name="Environment" parent="." instance=ExtResource("3_71j4m")]
+[node name="Environment" parent="." unique_id=1745124849 instance=ExtResource("3_71j4m")]
 transform = Transform3D(0.9990752, 0, 0, 0, 0.9990752, 0, 0, 0, 0.9990752, 0, 0, 0)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1994792305]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1414069880]
 environment = SubResource("Environment_jyhfs")
 
-[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=588934138]
 _spawnable_scenes = PackedStringArray("uid://ds2o47jeg1liv")
 spawn_path = NodePath("..")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1141468261]
 
-[node name="main_menu" type="PanelContainer" parent="CanvasLayer"]
+[node name="main_menu" type="PanelContainer" parent="CanvasLayer" unique_id=711719934]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -48,32 +48,32 @@ offset_bottom = -244.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/main_menu"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/main_menu" unique_id=456492139]
 layout_mode = 2
 theme_override_constants/margin_left = 15
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/main_menu/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/main_menu/MarginContainer" unique_id=874812752]
 layout_mode = 2
 theme_override_constants/separation = 15
 
-[node name="Label" type="Label" parent="CanvasLayer/main_menu/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/main_menu/MarginContainer/VBoxContainer" unique_id=1462744068]
 layout_mode = 2
 text = "Main Menu"
 horizontal_alignment = 1
 
-[node name="host_button" type="Button" parent="CanvasLayer/main_menu/MarginContainer/VBoxContainer"]
+[node name="host_button" type="Button" parent="CanvasLayer/main_menu/MarginContainer/VBoxContainer" unique_id=1996706110]
 layout_mode = 2
 text = "Host"
 
-[node name="join_button" type="Button" parent="CanvasLayer/main_menu/MarginContainer/VBoxContainer"]
+[node name="join_button" type="Button" parent="CanvasLayer/main_menu/MarginContainer/VBoxContainer" unique_id=861058855]
 layout_mode = 2
 disabled = true
 text = "Join"
 
-[node name="id_prompt" type="LineEdit" parent="CanvasLayer/main_menu/MarginContainer/VBoxContainer"]
+[node name="id_prompt" type="LineEdit" parent="CanvasLayer/main_menu/MarginContainer/VBoxContainer" unique_id=1555329494]
 layout_mode = 2
 placeholder_text = "Enter Lobby ID"
 alignment = 1

@@ -82,6 +82,5 @@ func _on_lobby_joined(lobby_id: int, permissions: int, locked: bool, response: i
 func _process(delta: float) -> void:
 	pass
 
-
 func _on_id_prompt_text_changed(new_text: String) -> void:
 	join_button.disabled = (new_text.length() == 0)

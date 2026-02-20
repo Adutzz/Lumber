@@ -16,7 +16,13 @@ properties/1/replication_mode = 1
 
 [sub_resource type="BoxMesh" id="BoxMesh_3vyb7"]
 
-[node name="Player" type="CharacterBody3D" unique_id=345883954]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fm4en"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_3vyb7"]
+material = SubResource("StandardMaterial3D_fm4en")
+size = Vector2(2, 2)
+
+[node name="Player" type="CharacterBody3D" unique_id=345883954 groups=["Player"]]
 script = ExtResource("1_g2els")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=661778905]
@@ -34,3 +40,7 @@ mesh = SubResource("BoxMesh_3vyb7")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=645274562]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55469227, -0.28640863)
+
+[node name="Slicer" type="MeshInstance3D" parent="." unique_id=1698730001]
+transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, 0.9999999, 0, -0.9999999, -4.3711385e-08, 0, 0, -1.9596988)
+mesh = SubResource("QuadMesh_3vyb7")

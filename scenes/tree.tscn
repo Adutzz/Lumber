@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://qp5rd0g1rpsy"]
+
+[ext_resource type="Script" uid="uid://c0iwy0wdgcppr" path="res://scripts/tree.gd" id="1_avsvi"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_avsvi"]
+height = 6.0
+radius = 2.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_avsvi"]
+albedo_color = Color(0.18039216, 1, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_avsvi"]
+material = SubResource("StandardMaterial3D_avsvi")
+size = Vector3(1, 6, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_avsvi"]
+size = Vector3(1, 6, 1)
+
+[node name="Tree" type="RigidBody3D" unique_id=599546766]
+script = ExtResource("1_avsvi")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1369591223]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1683598364]
+shape = SubResource("CylinderShape3D_avsvi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=208450631]
+mesh = SubResource("BoxMesh_avsvi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1833948927]
+shape = SubResource("BoxShape3D_avsvi")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
